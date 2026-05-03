@@ -21,6 +21,7 @@
       <span class="teacher-meta" id="teacherMeta">课堂：HSK 1 入门 · Lily 老师</span>
     </div>
     <div class="classroom-actions">
+      <button class="btn btn-ghost btn-sm" id="fullscreenBtn" data-i18n="cls.fullscreen" hidden>⛶ 全屏</button>
       <button class="btn btn-ghost btn-sm" id="openInNewTab" data-i18n="cls.newtab">新窗口打开</button>
       <a href="index.html" class="btn btn-outline btn-sm" data-i18n="cls.exit">退出课堂</a>
     </div>
@@ -61,7 +62,7 @@
   </div>
 
   <!-- Iframe stage -->
-  <div class="stage" id="stage" hidden>
+  <div class="stage" id="stage">
     <div class="stage-loader" id="loader">
       <div class="spinner"></div>
       <p data-i18n="cls.loading">正在连接课堂…</p>

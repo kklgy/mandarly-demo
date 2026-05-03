@@ -79,6 +79,7 @@ window.MANDARLY_I18N = {
     // Classroom
     'cls.newtab': '新窗口打开',
     'cls.exit': '退出课堂',
+    'cls.fullscreen': '⛶ 全屏',
     'cls.prejoin.title': '即将进入课堂',
     'cls.prejoin.sub': '这是产品演示页。你可以分别以 <strong>学生</strong> 和 <strong>老师</strong> 身份体验同一个 Mandarly 课堂——建议用两个浏览器窗口同时打开,模拟真实 1v1 上课场景。',
     'cls.role.student': '以学生身份进入',
@@ -175,6 +176,7 @@ window.MANDARLY_I18N = {
     // Classroom
     'cls.newtab': 'Open in new tab',
     'cls.exit': 'Exit Classroom',
+    'cls.fullscreen': '⛶ Fullscreen',
     'cls.prejoin.title': 'Ready to join the classroom',
     'cls.prejoin.sub': 'This is a product demo. You can experience the same Mandarly classroom as both <strong>Student</strong> and <strong>Teacher</strong> — open two browser windows side-by-side to simulate a real 1v1 class.',
     'cls.role.student': 'Enter as Student',

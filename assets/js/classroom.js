@@ -2,8 +2,8 @@
 // Embeds the LCIC iframe with role-switching (student / teacher)
 
 const LCIC_URLS = {
-  student: 'https://class.qcloudclass.com/latest/index.html?userid=3DCtkuuSK67HsFHyQNwOyEpdnxO&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Nzg0MDI4MjYsImlhdCI6MTc3Nzc5ODAyNiwiaXNzIjoiOTcxVW9NNkNudFVobHNkd2xva0Y5bzYzV2I4YXFnQ0oiLCJzY2hvb2xfaWQiOjM0MTI1ODksInVzZXJfaWQiOiIzREN0a3V1U0s2N0hzRkh5UU53T3lFcGRueE8ifQ.MuMJcGK_q7GDQd3zsgkPuooNnNCUSVBnQduzAXWVrGw&classid=338399649',
-  teacher: 'https://class.qcloudclass.com/latest/index.html?userid=3DCtkr2JAt3nMK4sTGUFklm9mqd&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Nzg0MDI4MjYsImlhdCI6MTc3Nzc5ODAyNiwiaXNzIjoiOTcxVW9NNkNudFVobHNkd2xva0Y5bzYzV2I4YXFnQ0oiLCJzY2hvb2xfaWQiOjM0MTI1ODksInVzZXJfaWQiOiIzREN0a3IySkF0M25NSzRzVEdVRmtsbTltcWQifQ.PZsQLPhQgyWoIpUwZvVjqVqRVmnDHsANWHjpjm-JXZs&classid=338399649'
+  student: 'https://class.qcloudclass.com/latest/index.html?userid=3DD2tZhPdSrA91s4y4XoVfTjHoN&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Nzg0MDczMzUsImlhdCI6MTc3NzgwMjUzNSwiaXNzIjoiOTcxVW9NNkNudFVobHNkd2xva0Y5bzYzV2I4YXFnQ0oiLCJzY2hvb2xfaWQiOjM0MTI1ODksInVzZXJfaWQiOiIzREQydFpoUGRTckE5MXM0eTRYb1ZmVGpIb04ifQ.GR-Bu1j-62B9GTUhdXoiOoo6axgmP7xaYHh31ByhVvw&classid=385166064',
+  teacher: 'https://class.qcloudclass.com/latest/index.html?userid=3DD2tUOFytbZjJubhp9myuyoIRq&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Nzg0MDczMzUsImlhdCI6MTc3NzgwMjUzNSwiaXNzIjoiOTcxVW9NNkNudFVobHNkd2xva0Y5bzYzV2I4YXFnQ0oiLCJzY2hvb2xfaWQiOjM0MTI1ODksInVzZXJfaWQiOiIzREQydFVPRnl0YlpqSnViaHA5bXl1eW9JUnEifQ.l3Xh1T65CRKfj5gHl-v8hHO1kKuXOYocj81T2l7jDDc&classid=385166064'
 };
 
 const TEACHER_DISPLAY = {
@@ -68,17 +68,35 @@ function setupEnterButton() {
     const stage = document.getElementById('stage');
     const loader = document.getElementById('loader');
     const iframe = document.getElementById('lcicFrame');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
 
     prejoin.hidden = true;
-    stage.hidden = false;
+    stage.classList.add('is-active');
+    if (fullscreenBtn) fullscreenBtn.hidden = false;
 
     iframe.src = LCIC_URLS[state.role];
     iframe.addEventListener('load', () => {
       setTimeout(() => { loader.style.display = 'none'; }, 500);
     }, { once: true });
 
-    // Fallback: hide loader after 8s no matter what
     setTimeout(() => { loader.style.display = 'none'; }, 8000);
+  });
+}
+
+function setupFullscreen() {
+  const btn = document.getElementById('fullscreenBtn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const stage = document.getElementById('stage');
+    const iframe = document.getElementById('lcicFrame');
+    if (!document.fullscreenElement) {
+      const target = iframe.requestFullscreen ? iframe : stage;
+      target.requestFullscreen().catch(() => {
+        stage.requestFullscreen();
+      });
+    } else {
+      document.exitFullscreen();
+    }
   });
 }
 
@@ -93,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupRoleSwitch();
   setupOpenInNewTab();
   setupEnterButton();
+  setupFullscreen();
 
   // Reflect initial role on UI
   document.querySelectorAll('.role-btn').forEach(b => {

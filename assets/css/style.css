@@ -854,16 +854,29 @@ section {
 
 /* Stage */
 .stage {
+  display: none;
   flex: 1;
   position: relative;
   background: #000;
+  min-height: 0;
 }
 
-.stage iframe {
+.stage.is-active {
+  display: flex;
+  flex-direction: column;
+}
+
+.stage.is-active iframe {
   width: 100%;
   height: 100%;
+  flex: 1;
   border: 0;
   display: block;
+  min-height: 0;
+}
+
+.prejoin[hidden] {
+  display: none;
 }
 
 .stage-loader {
