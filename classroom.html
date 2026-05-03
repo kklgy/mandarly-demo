@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mandarly · 课堂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="classroom-body">
+  <!-- Top bar -->
+  <header class="classroom-top">
+    <a href="index.html" class="brand small">
+      <span class="brand-logo">M</span>
+      <span class="brand-name">Mandarly</span>
+    </a>
+    <div class="classroom-meta">
+      <span class="role-tag" id="roleTag">学生身份</span>
+      <span class="teacher-meta" id="teacherMeta">课堂：HSK 1 入门 · Lily 老师</span>
+    </div>
+    <div class="classroom-actions">
+      <button class="btn btn-ghost btn-sm" id="openInNewTab" data-i18n="cls.newtab">新窗口打开</button>
+      <a href="index.html" class="btn btn-outline btn-sm" data-i18n="cls.exit">退出课堂</a>
+    </div>
+  </header>
+
+  <!-- Pre-class panel: device check & role switch -->
+  <div class="prejoin" id="prejoin">
+    <div class="prejoin-card">
+      <h2 data-i18n="cls.prejoin.title">即将进入课堂</h2>
+      <p class="prejoin-sub" data-i18n="cls.prejoin.sub">这是产品演示页。你可以分别以 <strong>学生</strong> 和 <strong>老师</strong> 身份体验同一个 Mandarly 课堂——建议用两个浏览器窗口同时打开，模拟真实 1v1 上课场景。</p>
+
+      <div class="role-switch">
+        <button class="role-btn active" data-role="student">
+          <div class="role-icon">🧑‍🎓</div>
+          <div class="role-name" data-i18n="cls.role.student">以学生身份进入</div>
+          <div class="role-desc" data-i18n="cls.role.studentDesc">体验视频通话、文字聊天、举手</div>
+        </button>
+        <button class="role-btn" data-role="teacher">
+          <div class="role-icon">🧑‍🏫</div>
+          <div class="role-name" data-i18n="cls.role.teacher">以老师身份进入</div>
+          <div class="role-desc" data-i18n="cls.role.teacherDesc">体验白板、屏幕共享、课件控制</div>
+        </button>
+      </div>
+
+      <div class="prejoin-tips">
+        <h4 data-i18n="cls.tips.title">进入前请确认</h4>
+        <ul>
+          <li data-i18n="cls.tips.t1">✓ 浏览器已允许使用摄像头和麦克风</li>
+          <li data-i18n="cls.tips.t2">✓ 网络稳定（推荐 5Mbps 以上）</li>
+          <li data-i18n="cls.tips.t3">✓ 首次加载课堂可能需要 5–10 秒</li>
+        </ul>
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-block" id="enterBtn" data-i18n="cls.enter">进入课堂</button>
+
+      <p class="prejoin-foot" data-i18n="cls.foot">如内嵌课堂加载失败，请使用"新窗口打开"按钮在新标签页中体验。</p>
+    </div>
+  </div>
+
+  <!-- Iframe stage -->
+  <div class="stage" id="stage" hidden>
+    <div class="stage-loader" id="loader">
+      <div class="spinner"></div>
+      <p data-i18n="cls.loading">正在连接课堂…</p>
+    </div>
+    <iframe
+      id="lcicFrame"
+      src=""
+      allow="camera; microphone; display-capture; autoplay; fullscreen; clipboard-read; clipboard-write"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/classroom.js"></script>
+</body>
+</html>

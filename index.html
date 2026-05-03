@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mandarly · Learn Mandarin Online with Native Teachers</title>
+  <meta name="description" content="Mandarly - 1-on-1 online Mandarin learning with native Chinese teachers. Learn anytime, anywhere." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Demo banner -->
+  <div class="demo-banner">
+    <span data-i18n="banner">🎬 这是一个产品 Demo · 演示链接有效期至 2026-05-11</span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">M</span>
+        <span class="brand-name">Mandarly</span>
+      </a>
+      <div class="nav-links">
+        <a href="#teachers" data-i18n="nav.teachers">在线老师</a>
+        <a href="#how" data-i18n="nav.how">如何上课</a>
+        <a href="#pricing" data-i18n="nav.pricing">课程价格</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <a href="#teachers" class="btn btn-primary" data-i18n="nav.cta">立即体验</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 data-i18n="hero.title">和母语老师<br/>一对一学中文</h1>
+        <p class="hero-sub" data-i18n="hero.sub">面向香港及海外华人家庭打造的在线中文培训平台。从口语启蒙到 HSK 备考，让孩子在母语环境中自然习得中文。</p>
+        <div class="hero-actions">
+          <a href="#teachers" class="btn btn-primary btn-lg" data-i18n="hero.cta1">浏览老师</a>
+          <a href="#how" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">了解上课流程</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>500+</strong><span data-i18n="hero.stat1">认证老师</span></div>
+          <div class="stat"><strong>30+</strong><span data-i18n="hero.stat2">国家学员</span></div>
+          <div class="stat"><strong>4.9★</strong><span data-i18n="hero.stat3">平均评分</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="floating-card card-1">
+            <div class="dot"></div>
+            <span data-i18n="hero.float1">📚 HSK 1 词汇 · 进行中</span>
+          </div>
+          <div class="floating-card card-2">
+            <div class="dot green"></div>
+            <span data-i18n="hero.float2">🎓 Lily 老师 在线</span>
+          </div>
+          <div class="floating-card card-3">
+            <div class="dot"></div>
+            <span data-i18n="hero.float3">⭐ 5.0 评价</span>
+          </div>
+          <div class="hero-illustration">
+            <div class="ill-frame">
+              <div class="ill-video"></div>
+              <div class="ill-controls">
+                <span class="ill-btn"></span>
+                <span class="ill-btn"></span>
+                <span class="ill-btn red"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teachers -->
+  <section id="teachers" class="teachers">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="teachers.title">精选老师</h2>
+        <p data-i18n="teachers.sub">所有老师均通过资质审核 · 普通话二甲及以上</p>
+      </div>
+      <div class="teacher-grid" id="teacherGrid"></div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="how">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="how.title">三步开始上课</h2>
+      </div>
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3 data-i18n="how.s1.t">挑选老师</h3>
+          <p data-i18n="how.s1.d">浏览老师列表，查看简介、评分与可约时段。</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3 data-i18n="how.s2.t">预约时段</h3>
+          <p data-i18n="how.s2.d">日历自动按你所在时区显示，选好时间提交预约。</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3 data-i18n="how.s3.t">网页内上课</h3>
+          <p data-i18n="how.s3.d">课前 5 分钟点击"进入课堂"，无需下载 App。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="pricing.title">课程套餐</h2>
+        <p data-i18n="pricing.sub">先免费体验一节，满意再选套餐</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3 data-i18n="pricing.p1.t">免费体验课</h3>
+          <div class="price"><span data-i18n="pricing.p1.price">免费</span></div>
+          <p data-i18n="pricing.p1.d">每位新学生赠送 1 节 30 分钟试课</p>
+          <ul>
+            <li data-i18n="pricing.p1.l1">✓ 任选老师</li>
+            <li data-i18n="pricing.p1.l2">✓ 完整 30 分钟</li>
+            <li data-i18n="pricing.p1.l3">✓ 无需付款</li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <div class="badge" data-i18n="pricing.p2.badge">最受欢迎</div>
+          <h3 data-i18n="pricing.p2.t">半年包 · 1 节/周</h3>
+          <div class="price">$<strong>299</strong></div>
+          <p data-i18n="pricing.p2.d">约 26 节 · 6 个月有效期</p>
+          <ul>
+            <li data-i18n="pricing.p2.l1">✓ 灵活预约</li>
+            <li data-i18n="pricing.p2.l2">✓ 多老师可选</li>
+            <li data-i18n="pricing.p2.l3">✓ 免费补课</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3 data-i18n="pricing.p3.t">一年包 · 2 节/周</h3>
+          <div class="price">$<strong>999</strong></div>
+          <p data-i18n="pricing.p3.d">约 104 节 · 12 个月有效期 · 9 折</p>
+          <ul>
+            <li data-i18n="pricing.p3.l1">✓ 进度追踪</li>
+            <li data-i18n="pricing.p3.l2">✓ 学习报告</li>
+            <li data-i18n="pricing.p3.l3">✓ 优先排课</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pricing-note" data-i18n="pricing.note">支持 HKD / USD / CNY 多币种 · Stripe / 微信 / 支付宝结账（第二阶段开放）</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <a href="index.html" class="brand">
+            <span class="brand-logo">M</span>
+            <span class="brand-name">Mandarly</span>
+          </a>
+          <p class="footer-tag" data-i18n="footer.tag">让世界轻松学中文</p>
+        </div>
+        <div class="footer-meta">
+          <p>© 2026 Mandarly Limited (Hong Kong)</p>
+          <p data-i18n="footer.demo">本网站为产品演示版本</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
