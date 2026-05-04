@@ -1,7 +1,7 @@
 // Mandarly Demo - i18n dictionary
 window.MANDARLY_I18N = {
   'zh-CN': {
-    'banner': '🎬 这是一个产品 Demo · 演示链接有效期至 2026-05-11',
+    'banner': '🎬 这是一个产品 Demo · 演示链接有效期至 2026-05-12',
     'nav.teachers': '在线老师',
     'nav.how': '如何上课',
     'nav.pricing': '课程价格',
@@ -98,7 +98,7 @@ window.MANDARLY_I18N = {
   },
 
   'en': {
-    'banner': '🎬 Product Demo · Demo links valid until May 11, 2026',
+    'banner': '🎬 Product Demo · Demo links valid until May 12, 2026',
     'nav.teachers': 'Teachers',
     'nav.how': 'How it works',
     'nav.pricing': 'Pricing',
